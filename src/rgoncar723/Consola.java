@@ -70,8 +70,8 @@ public class Consola implements IEntradaSalida {
 	public void mostrarMenu() {
 		imprimirLinea("====Menu====");
 		imprimirLinea("1. Contratar a un empleado");
-		imprimirLinea("2. Listar empleados");
-		imprimirLinea("3. Aplicar filtros");
+		imprimirLinea("2. Listar todos los empleados");
+		imprimirLinea("3. Listar empleados con filtros");
 		imprimirLinea("4. Salir del programa");
 		imprimirLinea("============");
 		
