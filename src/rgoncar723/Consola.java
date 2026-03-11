@@ -56,7 +56,7 @@ public class Consola implements IEntradaSalida {
 			error = false;
 			String texto = leerTexto(mensaje);
 			try {
-				numero = Integer.parseInt(texto);
+				numero = Double.parseDouble(texto);
 			} catch (NumberFormatException e) {
 				imprimirLinea("Error: Introduce un número válido.");
 				error = true;
@@ -68,12 +68,12 @@ public class Consola implements IEntradaSalida {
 
 	@Override
 	public void mostrarMenu() {
-		imprimirLinea("====Menu====");
-		imprimirLinea("1. Contratar a un empleado");
-		imprimirLinea("2. Listar todos los empleados");
-		imprimirLinea("3. Listar empleados con filtros");
-		imprimirLinea("4. Salir del programa");
-		imprimirLinea("============");
+		imprimir("====Menu====");
+		imprimir("1. Contratar a un empleado");
+		imprimir("2. Listar todos los empleados");
+		imprimir("3. Listar empleados con filtros");
+		imprimir("4. Salir del programa");
+		imprimir("============");
 		
 	}
 

@@ -35,7 +35,9 @@ public class GestorEmpleados {
 		String apellidos;
 		String dni;
 		int categoria;
+		int ventas;
 		double sueldoBase;
+		Comercial comercial;
 		consola.imprimir("Rellene los siguientes campos");
 		nombre = consola.leerTexto("Nombre:  ");
 		apellidos = consola.leerTexto("Apellidos: ");
@@ -49,7 +51,10 @@ public class GestorEmpleados {
 			plantilla.contratarEmpleado(new Tecnico(dni, nombre, apellidos, sueldoBase, categoria));
 		}
 		if (opcion == 2) {
-			plantilla.contratarEmpleado(new Comercial(dni, nombre, apellidos, sueldoBase));
+			ventas = consola.leerEntero("Ventas:  ");
+			plantilla.contratarEmpleado(comercial = new Comercial(dni, nombre, apellidos, sueldoBase));
+			comercial.setVentas(ventas);
+			
 		}
 
 	}
@@ -74,8 +79,7 @@ public class GestorEmpleados {
 		ordenarPorNombre(empleados);
 		for (int i = 0; i < empleados.size(); i++) {
 			e = empleados.get(i);
-			consola.imprimir("Nombre: " + e.getNombre() + "Apellidos: " + e.getApellidos() + "DNI: " + e.getDni()
-					+ "Sueldo base: " + e.getSueldoBase());
+			consola.imprimir( (i+1) + "- " + e.getNombre()+ " " + e.getApellidos() + ": " +e.getSueldo() + "€");
 		}
 
 	}

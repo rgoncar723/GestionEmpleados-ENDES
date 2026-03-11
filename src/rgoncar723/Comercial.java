@@ -6,6 +6,7 @@ public class Comercial extends Empleado {
 	//Constructor
 	public Comercial(String dni, String nombre, String apellidos, double sueldoBase) {
 		super(dni, nombre, apellidos, sueldoBase);
+		
 	}
 	//Metodos
 	void setVentas(double ventas) {
@@ -13,8 +14,8 @@ public class Comercial extends Empleado {
 	}
 	@Override
 	public double getSueldo() {
-		double sueldo=0.0;
-		sueldo = getSueldoBase() + (ventas/10); 
+		double sueldo;
+		sueldo = getSueldoBase() +(ventas *0.10) ; 
 		return sueldo;
 	}
 	
