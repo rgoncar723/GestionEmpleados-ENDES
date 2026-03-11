@@ -53,18 +53,31 @@ public class GestorEmpleados {
 		}
 
 	}
-	void ordenarPorNombre(List<Empleado> empleados){
-		
+
+	void ordenarPorNombre(List<Empleado> empleados) {
+
 		Collections.sort(empleados, Comparator.comparing(Empleado::getNombre));
 	}
+
 	void listarTodos() {
-		
+		listarEmpleados(plantilla.getEmpleadosPorNombre(""));
 	}
+
 	void listarPorFiltro() {
-		
+		String mensaje;
+		mensaje = consola.leerTexto("Texto a buscar:  ");
+		listarEmpleados(plantilla.getEmpleadosPorNombre(mensaje));
 	}
+
 	void listarEmpleados(List<Empleado> empleados) {
-		
+		Empleado e;
+		ordenarPorNombre(empleados);
+		for (int i = 0; i < empleados.size(); i++) {
+			e = empleados.get(i);
+			consola.imprimir("Nombre: " + e.getNombre() + "Apellidos: " + e.getApellidos() + "DNI: " + e.getDni()
+					+ "Sueldo base: " + e.getSueldoBase());
+		}
+
 	}
 
 }
